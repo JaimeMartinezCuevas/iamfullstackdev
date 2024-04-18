@@ -6,7 +6,9 @@ import InputCreate from "./InputCreate.jsx";
 
 const App = () => {
   const [data, setData] = useState(null)
-  const urlApi = 'http://localhost:3000'
+  const urlApi = import.meta.env.VITE_APP_API_URL
+
+  // const urlApi = 'http://localhost:3000'
 
 const fetchData = async () => {
   try {
@@ -27,7 +29,7 @@ useEffect(() => {
       <div>
         <nav>
           <Link to="/">Inicio</Link>
-          <Link to="/create">create</Link>
+          <Link to="/create">Create</Link>
         </nav>
         {data === null 
         ? (<div>cargando...</div>) 
